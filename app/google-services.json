@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "438065743730",
+    "firebase_url": "https://backgammon-131d0.firebaseio.com",
+    "project_id": "backgammon-131d0",
+    "storage_bucket": "backgammon-131d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438065743730:android:0b67f853f8e7f6e28bbfeb",
+        "android_client_info": {
+          "package_name": "com.example.backgammon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438065743730-ueofiaksuh3s5920tla95tpmfmm8vnfc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.backgammon",
+            "certificate_hash": "e037d934bb107e3b56d505d23f6b64593c8476af"
+          }
+        },
+        {
+          "client_id": "438065743730-8dhf44n4k1q1v64dtt5cbnd5ejn652fa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXCSlZpqVmA9iDskPlCo9XqAh2R9NeFlw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438065743730-8dhf44n4k1q1v64dtt5cbnd5ejn652fa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

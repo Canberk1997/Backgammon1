@@ -37,9 +37,36 @@ public class ActivityMehrspieler extends Activity {
         findViewById(R.id.profile_image2).setOnTouchListener(new MyTouchListener());
         findViewById(R.id.profile_image3).setOnTouchListener(new MyTouchListener());
         findViewById(R.id.profile_image4).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image5).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image6).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image7).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image8).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image9).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image10).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image11).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image12).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image13).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image14).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image15).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image16).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image17).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image18).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image19).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image20).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image21).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image22).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image23).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image24).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image25).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image26).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image27).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image28).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image29).setOnTouchListener(new MyTouchListener());
+        findViewById(R.id.profile_image30).setOnTouchListener(new MyTouchListener());
+
         findViewById(R.id.ll1).setOnDragListener(new MyDragListener());
         findViewById(R.id.ll2).setOnDragListener(new MyDragListener());
-        //findViewById(R.id.ll3).setOnDragListener(new MyDragListener());
+        findViewById(R.id.ll3).setOnDragListener(new MyDragListener());
         findViewById(R.id.ll4).setOnDragListener(new MyDragListener());
         findViewById(R.id.ll5).setOnDragListener(new MyDragListener());
         findViewById(R.id.ll6).setOnDragListener(new MyDragListener());
@@ -61,7 +88,7 @@ public class ActivityMehrspieler extends Activity {
         findViewById(R.id.ll24).setOnDragListener(new MyDragListener());
         findViewById(R.id.ll25).setOnDragListener(new MyDragListener());
         findViewById(R.id.ll26).setOnDragListener(new MyDragListener());
-        findViewById(R.id.zacken3).setOnDragListener(new MyDragListener());
+
 
 
         rollDice = (Button) findViewById(R.id.rollDice);
@@ -108,7 +135,8 @@ public class ActivityMehrspieler extends Activity {
 
              Drawable enterShape = getResources().getDrawable(
                      R.drawable.shape_droptarget);
-             Drawable normalShape = getResources().getDrawable(R.drawable.shape);
+             Drawable normalShape = getResources().getDrawable(R.drawable.weissesdreieck);
+                Drawable normalShape1 = getResources().getDrawable(R.drawable.schwarzesdreieck);
 
                 @Override
                 public boolean onDrag(View v, DragEvent event) {
@@ -135,6 +163,7 @@ public class ActivityMehrspieler extends Activity {
                             break;
                         case DragEvent.ACTION_DRAG_ENDED:
                             v.setBackground(normalShape);
+                            v.setBackground(normalShape1);
                         default:
                             break;
                     }

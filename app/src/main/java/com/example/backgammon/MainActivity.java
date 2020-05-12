@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -60,6 +63,9 @@ private Button btnMehrSpieler;
         public void openActivityEinzelspieler(){
             Intent intent = new Intent(this,ActivityEinzelspieler.class);
             startActivity(intent);
+
+            writeFB();
+
         }
 
         public void opeenActivityMehrSpieler(){
@@ -67,7 +73,15 @@ private Button btnMehrSpieler;
             startActivity(intent);
         }
 
+        public void writeFB(){
 
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+          //  DatabaseReference myRef = database.getReference("Spielbrett/whiteStone/00");
+
+            database.getReference("Spielfeld/whiteStone/00").setValue(2);
+
+
+        }
 
     }
 

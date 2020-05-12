@@ -16,6 +16,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.lang.reflect.Method;
 import java.util.Random;
 
@@ -133,10 +136,6 @@ public class ActivityMehrspieler extends Activity {
 
             class MyDragListener implements View.OnDragListener{
 
-             Drawable enterShape = getResources().getDrawable(
-                     R.drawable.shape_droptarget);
-             Drawable normalShape = getResources().getDrawable(R.drawable.weissesdreieck);
-                Drawable normalShape1 = getResources().getDrawable(R.drawable.schwarzesdreieck);
 
                 @Override
                 public boolean onDrag(View v, DragEvent event) {
@@ -147,10 +146,10 @@ public class ActivityMehrspieler extends Activity {
                             //do nothing
                             break;
                         case DragEvent.ACTION_DRAG_ENTERED:
-                            v.setBackground(enterShape);
+
                             break;
                         case DragEvent.ACTION_DRAG_EXITED:
-                            v.setBackground(normalShape);
+
                             break;
                         case DragEvent.ACTION_DROP:
                             //Dropped, reassign View to ViewGroup
@@ -162,8 +161,11 @@ public class ActivityMehrspieler extends Activity {
                             view.setVisibility(View.VISIBLE);
                             break;
                         case DragEvent.ACTION_DRAG_ENDED:
-                            v.setBackground(normalShape);
-                            v.setBackground(normalShape1);
+
+
+
+
+
                         default:
                             break;
                     }

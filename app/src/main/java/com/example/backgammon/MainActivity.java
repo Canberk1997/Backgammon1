@@ -79,8 +79,11 @@ private Button btnMehrSpieler;
           //  DatabaseReference myRef = database.getReference("Spielbrett/whiteStone/00");
 
             database.getReference("Spielfeld/whiteStone/00").setValue(2);
+            database.getReference("Spielfeld/whiteStone/11").setValue(5);
+            database.getReference("Spielfeld/whiteStone/16").setValue(3);
+            database.getReference("Spielfeld/whiteStone/18").setValue(5);
 
-
+            database.getReference("Spielfeld/blackStone/23").setValue(2);
         }
 
     }

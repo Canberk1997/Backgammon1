@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.material.textfield.TextInputEditText;
+//import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -36,8 +36,14 @@ public EditText nameAmk;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Textausgabe mit Name bis Zeile 46
 
+        Intent i = getIntent();
+        String texteingabe = getIntent().getStringExtra(login_activity.EXTRA_TEXT);
 
+        TextView textausgabe = (TextView) findViewById(R.id.textausgabe);
+
+        textausgabe.setText("Hallo "+ texteingabe + ", Willkommen auf unserer App");
 
         btnEinstellungen = (Button) findViewById(R.id.btnEinstellungen);
         btnEinstellungen.setOnClickListener(new View.OnClickListener() {

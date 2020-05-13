@@ -25,107 +25,77 @@
             android:id="@+id/btnEinstellungen"
             android:layout_width="136dp"
             android:layout_height="118dp"
-            android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="38dp"
-            android:layout_marginLeft="38dp"
-            android:layout_marginTop="317dp"
-            android:background="@android:drawable/ic_menu_preferences"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.783"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="416dp" />
-
-        <Button
-            android:id="@+id/btnSound"
-            android:layout_width="136dp"
-            android:layout_height="118dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="310dp"
-            android:layout_marginEnd="6dp"
-            android:layout_marginRight="6dp"
-            android:background="@android:drawable/ic_lock_silent_mode" />
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="120dp"
+            android:background="@android:drawable/ic_menu_preferences"
+
+            />
+
 
         <Button
             android:id="@+id/btnEinzelSpieler"
             android:layout_width="136dp"
             android:layout_height="118dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="206dp"
-            android:layout_marginRight="206dp"
-            android:layout_marginBottom="305dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="280dp"
             android:background="@drawable/einzelspieler" />
 
         <Button
             android:id="@+id/btnMehrSpieler"
             android:layout_width="136dp"
             android:layout_height="118dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="218dp"
-            android:layout_marginLeft="218dp"
-            android:layout_marginBottom="303dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="280dp"
             android:background="@drawable/einzelspieler"
             android:onClick="myLogin" />
 
         <TextView
             android:id="@+id/txtOnlineSpieler"
-            android:layout_width="wrap_content"
+            android:layout_width="136dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="256dp"
-            android:layout_marginLeft="256dp"
-            android:layout_marginBottom="249dp"
-            android:text="Online Spielersuche"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="250dp"
+            android:gravity="center"
+            android:text="Online Spieler"
+
             android:textColor="@android:color/background_light" />
 
         <TextView
             android:id="@+id/txtEinzelspieler"
-            android:layout_width="wrap_content"
+            android:layout_width="136dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="236dp"
-            android:layout_marginRight="236dp"
-            android:layout_marginBottom="261dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="250dp"
             android:text="Einzelspieler"
+            android:gravity="center"
             android:textColor="@android:color/background_light" />
 
         <TextView
             android:id="@+id/txtEinstellungen"
-            android:layout_width="wrap_content"
+            android:layout_width="136dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="80dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginBottom="41dp"
-            android:text="Einstellungen"
-            android:textColor="@android:color/background_light" />
-
-        <TextView
-            android:id="@+id/txtSound"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="52dp"
-            android:layout_marginRight="52dp"
-            android:layout_marginBottom="33dp"
-            android:text="Sound"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="100dp"
+            android:text="Einstellungen"
+            android:gravity="center"
             android:textColor="@android:color/background_light" />
+
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image2"
@@ -134,9 +104,10 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="112dp"
-            android:layout_marginEnd="163dp"
-            android:layout_marginRight="163dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="119dp"
+            android:layout_marginRight="119dp"
+            android:layout_marginLeft="119dp"
             android:src="@drawable/logo">
 
         </de.hdodenhof.circleimageview.CircleImageView>
@@ -147,8 +118,21 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
+            android:background="#FFFFFF"
             android:text="Name" />
 
+        <TextView
+            android:id="@+id/textausgabe"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="18dp"
+            android:gravity="center">
+
+        </TextView>
 
     </RelativeLayout>
 

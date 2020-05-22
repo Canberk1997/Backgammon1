@@ -6,134 +6,127 @@
     android:layout_height="match_parent">
 
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
 
-        android:background="@drawable/bild1"
+        android:background="@drawable/shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.42000002">
 
 
         <Button
             android:id="@+id/btnEinstellungen"
-            android:layout_width="136dp"
-            android:layout_height="118dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginBottom="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+
+            android:layout_marginTop="20dp"
             android:background="@android:drawable/ic_menu_preferences"
-
-            />
-
+            app:layout_constraintEnd_toStartOf="@+id/btnMehrSpieler"
+            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintStart_toEndOf="@+id/btnEinzelspieler"
+            app:layout_constraintTop_toBottomOf="@+id/txtEinzelspieler" />
 
         <Button
-            android:id="@+id/btnEinzelSpieler"
-            android:layout_width="136dp"
-            android:layout_height="118dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="280dp"
-            android:background="@drawable/einzelspieler" />
+            android:id="@+id/btnEinzelspieler"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/einzelspieler"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textausgabe" />
 
         <Button
             android:id="@+id/btnMehrSpieler"
-            android:layout_width="136dp"
-            android:layout_height="118dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="280dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
             android:background="@drawable/einzelspieler"
-            android:onClick="myLogin" />
+            android:onClick="myLogin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/btnEinzelspieler"
+            app:layout_constraintTop_toBottomOf="@+id/textausgabe" />
 
         <TextView
             android:id="@+id/txtOnlineSpieler"
-            android:layout_width="136dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="250dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="Online Spieler"
-
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/btnMehrSpieler"
+            app:layout_constraintTop_toBottomOf="@+id/btnMehrSpieler" />
 
         <TextView
             android:id="@+id/txtEinzelspieler"
-            android:layout_width="136dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="250dp"
-            android:text="Einzelspieler"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
             android:gravity="center"
-            android:textColor="@android:color/background_light" />
+            android:text="Einzel Spieler"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/btnEinzelspieler"
+            app:layout_constraintTop_toBottomOf="@+id/btnEinzelspieler" />
+
 
         <TextView
             android:id="@+id/txtEinstellungen"
-            android:layout_width="136dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginBottom="100dp"
-            android:text="Einstellungen"
-            android:gravity="center"
-            android:textColor="@android:color/background_light" />
+            android:layout_width="125dp"
+            android:layout_height="30dp"
 
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="Einstellungen"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/btnEinstellungen"
+            app:layout_constraintTop_toBottomOf="@+id/btnEinstellungen"
+            app:layout_constraintVertical_bias="0.241" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image2"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="119dp"
-            android:layout_marginRight="119dp"
-            android:layout_marginLeft="119dp"
-            android:src="@drawable/logo">
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnMehrSpieler"
+            app:layout_constraintStart_toEndOf="@+id/btnEinzelspieler"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.100000024">
 
         </de.hdodenhof.circleimageview.CircleImageView>
-
-        <EditText
-            android:id="@+id/nameInput"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:background="#FFFFFF"
-            android:text="Name" />
 
         <TextView
             android:id="@+id/textausgabe"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:layout_marginTop="120dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
             android:textColor="@color/cardview_light_background"
             android:textSize="18dp"
-            android:gravity="center">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image2">
 
         </TextView>
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

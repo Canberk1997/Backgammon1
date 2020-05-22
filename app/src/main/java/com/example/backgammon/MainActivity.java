@@ -53,16 +53,13 @@ public EditText nameAmk;
             }
         });
 
-        btnEinzelSpieler = (Button) findViewById(R.id.btnEinzelSpieler);
-        btnEinzelSpieler.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            nameAmk = (EditText) findViewById(R.id.nameInput);
-            name = nameAmk.getText().toString();
-             openActivityEinzelspieler();
-
-            }
-        });
+       btnEinzelSpieler = (Button) findViewById(R.id.btnEinzelspieler);
+       btnEinzelSpieler.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               openActivityEinzelspieler();
+           }
+       });
 
         btnMehrSpieler = findViewById(R.id.btnMehrSpieler);
         btnMehrSpieler.setOnClickListener(new View.OnClickListener() {

@@ -531,14 +531,16 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toEndOf="@+id/rollDice"
+      app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+      app:layout_constraintVertical_bias="1.0"
       app:layout_gravity="bottom"
       app:layout_row="0" />
 
   <Button
       android:id="@+id/rollDice"
-      android:layout_width="100dp"
+      android:layout_width="70dp"
       android:layout_height="70dp"
-      android:layout_marginBottom="8dp"
+      android:orientation="vertical"
       android:rotation="90"
       android:text="Roll Dices!"
       android:textSize="15sp"
@@ -548,6 +550,50 @@
       app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_row="0" />
+
+  <Button
+      android:id="@+id/btnAufgeben"
+      android:layout_width="100dp"
+      android:layout_height="40dp"
+      android:layout_marginBottom="20dp"
+      android:orientation="vertical"
+      android:rotation="90"
+      android:text="Aufgeben!"
+      app:layout_constraintBottom_toBottomOf="@+id/rollDice"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toEndOf="@+id/image_view_wuerfel1"
+      app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+      app:layout_constraintVertical_bias="1.0" />
+
+  <TextView
+      android:id="@+id/textViewGegner"
+      android:layout_width="80dp"
+      android:layout_height="50dp"
+      android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+      android:rotation="90"
+      android:text="Gegner: 0"
+      android:textSize="15sp"
+      app:layout_constraintBottom_toBottomOf="@+id/btnAufgeben"
+      app:layout_constraintStart_toEndOf="@+id/btnAufgeben"
+      app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+      app:layout_constraintVertical_bias="1.0" />
+
+  <TextView
+      android:id="@+id/textViewSie"
+      android:layout_width="70dp"
+      android:layout_height="50dp"
+      android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+      android:rotation="90"
+      android:text="Sie: 0"
+      android:textSize="15sp"
+      app:layout_constraintBottom_toBottomOf="@+id/textViewGegner"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toEndOf="@+id/textViewGegner"
+      app:layout_constraintTop_toTopOf="@+id/textViewGegner"
+      app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

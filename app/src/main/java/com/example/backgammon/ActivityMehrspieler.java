@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -24,9 +25,15 @@ import java.util.Random;
 
 import static com.example.backgammon.ActivityEinzelspieler.rollDice1;
 
-public class ActivityMehrspieler extends Activity {
+public class ActivityMehrspieler extends AppCompatActivity {
 
+
+    private int Player1Points;
+    private int Player2Points;
+    private TextView textViewPlayer1;
+    private TextView textViewPlayer2;
     private Button rollDice;
+    private Button btnAufgeben;
     private ImageView imageViewWuerfel1;
     private ImageView imageViewWuerfel2;
     public static final Random RANDOM = new Random();
@@ -112,7 +119,24 @@ public class ActivityMehrspieler extends Activity {
                 imageViewWuerfel2.setImageResource(res2);
             }
         });
+
+        btnAufgeben = (Button) findViewById(R.id.btnAufgeben);
+        btnAufgeben.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+            openpopupinformation();
+           }
+       });
+
+        textViewPlayer1 = findViewById(R.id.textViewSie);
+        textViewPlayer2 = findViewById(R.id.textViewGegner);
+
+
+
     }
+
+
+
     public static int rollDice1 () {
         return RANDOM.nextInt(6) + 1;
     }
@@ -134,7 +158,7 @@ public class ActivityMehrspieler extends Activity {
                 }
             }
 
-            class MyDragListener implements View.OnDragListener{
+            class MyDragListener implements View.OnDragListener {
 
 
                 @Override
@@ -163,15 +187,21 @@ public class ActivityMehrspieler extends Activity {
                         case DragEvent.ACTION_DRAG_ENDED:
 
 
-
-
-
                         default:
                             break;
                     }
                     return true;
                 }
-    }
+            }
+
+            public void openpopupinformation(){
+
+        PopUp popUp = new PopUp();
+
+        popUp.show(getSupportFragmentManager(),"example");
+
+
+            }
 }
 
 

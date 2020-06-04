@@ -13,21 +13,33 @@
 
     <LinearLayout
         android:id="@+id/ll_00"
-        android:layout_width="match_parent"
+        android:layout_width="400dp"
         android:layout_height="100dp"
         android:background="@drawable/weissesdreieck"
         android:orientation="horizontal">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/stein1"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/weisserstein"
-            app:civ_border_color="#FF000000"
-            app:civ_border_width="3dp">
+      <LinearLayout
+          android:id="@+id/ll001"
+          android:layout_width="80dp"
+          android:layout_height="100dp">
 
-        </de.hdodenhof.circleimageview.CircleImageView>
-
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </LinearLayout>
     </LinearLayout>
 
 
@@ -39,7 +51,16 @@
         android:orientation="horizontal">
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"></LinearLayout>
+    </LinearLayout>
 
 
 </LinearLayout>

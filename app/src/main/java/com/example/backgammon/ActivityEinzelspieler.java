@@ -24,7 +24,7 @@ public class ActivityEinzelspieler extends AppCompatActivity {
         setContentView(R.layout.activity_einzelspieler);
 
 
-        linearLayouts[0][0] = (LinearLayout) findViewById(R.id.ll_00);
+        linearLayouts[0][0] = (LinearLayout) findViewById(R.id.ll001);
         linearLayouts[1][0] = (LinearLayout) findViewById(R.id.ll_01);
 
       ImageView neu = new ImageView(this);
@@ -32,6 +32,11 @@ public class ActivityEinzelspieler extends AppCompatActivity {
       neu.setImageResource(R.drawable.weisserstein);
       linearLayouts[0][0].addView(neu);
 
+
+        ImageView neu1 = new ImageView(this);
+        neu1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
+        neu1.setImageResource(R.drawable.schwarzerstein);
+        linearLayouts[1][0].addView(neu1);
 
 
     }

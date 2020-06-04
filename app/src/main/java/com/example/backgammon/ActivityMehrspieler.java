@@ -23,11 +23,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.lang.reflect.Method;
 import java.util.Random;
 
-import static com.example.backgammon.ActivityEinzelspieler.rollDice1;
+//import static com.example.backgammon.ActivityEinzelspieler.rollDice1;
 
 public class ActivityMehrspieler extends AppCompatActivity {
 
-
+private Button [][] buttons = new Button [3][2];
+private LinearLayout [][] layouts = new LinearLayout[3][2];
     private int Player1Points;
     private int Player2Points;
     private TextView textViewPlayer1;
@@ -43,36 +44,9 @@ public class ActivityMehrspieler extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mehrspieler);
 
-        findViewById(R.id.profile_image1).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image2).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image3).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image4).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image5).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image6).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image7).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image8).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image9).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image10).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image11).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image12).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image13).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image14).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image15).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image16).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image17).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image18).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image19).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image20).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image21).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image22).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image23).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image24).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image25).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image26).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image27).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image28).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image29).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.profile_image30).setOnTouchListener(new MyTouchListener());
+        for(int i = 1; i<30; i++){
+            findViewById(R.id.stein1+i).setOnTouchListener(new MyTouchListener());
+        }
 
         findViewById(R.id.ll1).setOnDragListener(new MyDragListener());
         findViewById(R.id.ll2).setOnDragListener(new MyDragListener());
@@ -120,6 +94,8 @@ public class ActivityMehrspieler extends AppCompatActivity {
             }
         });
 
+
+        //Button zum Aufgeben, damit ein extra PopUpWindow erscheint
         btnAufgeben = (Button) findViewById(R.id.btnAufgeben);
         btnAufgeben.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -128,6 +104,9 @@ public class ActivityMehrspieler extends AppCompatActivity {
            }
        });
 
+
+
+        //Für Spielstand aber noch nicht vollständig
         textViewPlayer1 = findViewById(R.id.textViewSie);
         textViewPlayer2 = findViewById(R.id.textViewGegner);
 
@@ -149,7 +128,7 @@ public class ActivityMehrspieler extends AppCompatActivity {
                         View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(
                                 v);
                         v.startDrag(data, shadowBuilder, v, 0);
-                        v.setVisibility(View.INVISIBLE);
+                        v.setVisibility(View.VISIBLE);
                         return true;
                     }
                         else {
@@ -195,10 +174,8 @@ public class ActivityMehrspieler extends AppCompatActivity {
             }
 
             public void openpopupinformation(){
-
         PopUp popUp = new PopUp();
-
-        popUp.show(getSupportFragmentManager(),"example");
+        popUp.show(getSupportFragmentManager(),"popup");
 
 
             }

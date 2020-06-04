@@ -34,7 +34,7 @@
         android:orientation="horizontal">
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image1"
+          android:id="@+id/stein1"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/weisserstein"
@@ -42,7 +42,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image2"
+          android:id="@+id/stein2"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/weisserstein"
@@ -50,7 +50,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image3"
+          android:id="@+id/stein3"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/weisserstein"
@@ -58,7 +58,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image4"
+          android:id="@+id/stein4"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/weisserstein"
@@ -66,7 +66,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image5"
+          android:id="@+id/stein5"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/weisserstein"
@@ -85,7 +85,7 @@
         android:rotation="180">
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image16"
+          android:id="@+id/stein16"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/schwarzerstein"
@@ -93,7 +93,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image17"
+          android:id="@+id/stein17"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/schwarzerstein"
@@ -101,7 +101,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image18"
+          android:id="@+id/stein18"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/schwarzerstein"
@@ -109,7 +109,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image19"
+          android:id="@+id/stein19"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/schwarzerstein"
@@ -119,7 +119,7 @@
       </de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image20"
+          android:id="@+id/stein20"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/schwarzerstein"
@@ -185,7 +185,7 @@
 
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image6"
+          android:id="@+id/stein6"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/schwarzerstein"
@@ -193,7 +193,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image7"
+          android:id="@+id/stein7"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/schwarzerstein"
@@ -201,7 +201,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image8"
+          android:id="@+id/stein8"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/schwarzerstein"
@@ -220,7 +220,7 @@
         android:rotation="180">
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image21"
+          android:id="@+id/stein21"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/weisserstein"
@@ -228,7 +228,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image22"
+          android:id="@+id/stein22"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/weisserstein"
@@ -236,7 +236,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image23"
+          android:id="@+id/stein23"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/weisserstein"
@@ -285,7 +285,7 @@
         android:orientation="horizontal">
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image9"
+          android:id="@+id/stein9"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/schwarzerstein"
@@ -293,7 +293,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image10"
+          android:id="@+id/stein10"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/schwarzerstein"
@@ -301,7 +301,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image11"
+          android:id="@+id/stein11"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/schwarzerstein"
@@ -309,7 +309,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image12"
+          android:id="@+id/stein12"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/schwarzerstein"
@@ -317,7 +317,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image13"
+          android:id="@+id/stein13"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/schwarzerstein"
@@ -336,7 +336,7 @@
         android:rotation="180">
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image24"
+          android:id="@+id/stein24"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/weisserstein"
@@ -344,7 +344,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image25"
+          android:id="@+id/stein25"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/weisserstein"
@@ -352,7 +352,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image26"
+          android:id="@+id/stein26"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/weisserstein"
@@ -360,7 +360,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image27"
+          android:id="@+id/stein27"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/weisserstein"
@@ -368,7 +368,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image28"
+          android:id="@+id/stein28"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/weisserstein"
@@ -459,7 +459,7 @@
         android:orientation="horizontal">
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image14"
+          android:id="@+id/stein14"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/weisserstein"
@@ -467,7 +467,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image15"
+          android:id="@+id/stein15"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/weisserstein"
@@ -485,7 +485,7 @@
         android:rotation="180">
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image29"
+          android:id="@+id/stein29"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/schwarzerstein"
@@ -493,7 +493,7 @@
           app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
       <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/profile_image30"
+          android:id="@+id/stein30"
           android:layout_width="30dp"
           android:layout_height="30dp"
           android:src="@drawable/schwarzerstein"

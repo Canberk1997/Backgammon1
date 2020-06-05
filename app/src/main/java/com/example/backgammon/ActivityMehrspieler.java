@@ -27,8 +27,7 @@ import java.util.Random;
 
 public class ActivityMehrspieler extends AppCompatActivity {
 
-private Button [][] buttons = new Button [3][2];
-private LinearLayout [][] layouts = new LinearLayout[3][2];
+
     private int Player1Points;
     private int Player2Points;
     private TextView textViewPlayer1;

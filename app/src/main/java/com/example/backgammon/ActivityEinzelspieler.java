@@ -55,7 +55,7 @@ public class ActivityEinzelspieler extends AppCompatActivity {
         w2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
         w2.setImageResource(R.drawable.weissterstein1);
         linearLayouts[0][1].addView(w2);
-w2.setId(02);
+        w2.setId(02);
 
 
 
@@ -69,7 +69,7 @@ w2.setId(02);
         s2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
         s2.setImageResource(R.drawable.schwarzerstein1);
         linearLayouts[1][1].addView(s2);
-    s2.setId(22);
+        s2.setId(22);
 
         w1.setOnTouchListener(new MyTouchListener());
         w2.setOnTouchListener(new MyTouchListener());
@@ -141,32 +141,50 @@ w2.setId(02);
 
 
                                  linearLayouts1.getId();
-                               // linearLayouts = ();
-                               // linearLayouts1.setId(linearLayouts[][]);
+
                     String name = linearLayouts1.toString();
                     if(name.contains("ll_21")) {
 
-                        if (linearLayouts1.getChildAt(0) == null) {
-                            linearLayouts1.addView(view);
-                        }
 
-                        else if (
-                            linearLayouts1.getChildAt(0) != null){
-                            linearLayouts1.cancelDragAndDrop();
-                        }
+
+                            if (linearLayouts1.getChildAt(0) == null) {
+                                linearLayouts1.addView(view);
+                            } else if (
+                                    linearLayouts1.getChildAt(0) != null) {
+
+                                owner.addView(view);
+                                return false;
+                            }
+
                     }
 
-                    //  if (linearLayouts1.getChildAt(0).getId() == (int) 1  ) {
-                      //    linearLayouts1.removeAllViews();
+                    if (name.contains("ll_22")) {
+                        if (linearLayouts1.getChildAt(0) == null) {
+                            linearLayouts1.addView(view);
+                        } else if (
+                                linearLayouts1.getChildAt(0) != null) {
+                            owner.addView(view);
+                            return false;
+
+                        }
+
+                    }
+                    if (name.contains("ll_23")) {
+                            if (linearLayouts1.getChildAt(0) == null) {
+                                linearLayouts1.addView(view);
+                            }
+                            else if(
+                                linearLayouts1.getChildAt(0) != null) {
+                                owner.addView(view);
+                                return false;
+                        }
 
 
-                      //}
-                       //  if (linearLayouts1.getChildAt(1).getId() == (int) 2  )    {
-                         //     linearLayouts1.removeAllViews();
-                             //tv.setText(""+ linearLayouts1);
+                    }
 
 
-                    //tv.setText(""+ linearLayouts1);
+
+
 
 
                     view.setVisibility(View.VISIBLE);
@@ -183,6 +201,21 @@ w2.setId(02);
     }
 }
 
+//  if (linearLayouts1.getChildAt(0).getId() == (int) 1  ) {
+//    linearLayouts1.removeAllViews();
+
+//}
+//  if (linearLayouts1.getChildAt(1).getId() == (int) 2  )    {
+//     linearLayouts1.removeAllViews();
+//tv.setText(""+ linearLayouts1);
+//tv.setText(""+ linearLayouts1);
+//  if (linearLayouts1.getChildAt(0).getId() == (int) 1  ) {
+//    linearLayouts1.removeAllViews();
+//}
+//  if (linearLayouts1.getChildAt(1).getId() == (int) 2  )    {
+//     linearLayouts1.removeAllViews();
+//tv.setText(""+ linearLayouts1);
+//tv.setText(""+ linearLayouts1);
 
 
         /*for (int i = 0; i < 0; i++) {

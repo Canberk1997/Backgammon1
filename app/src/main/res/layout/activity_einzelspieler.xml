@@ -39,15 +39,6 @@
             android:layout_height="35dp"
             android:orientation="horizontal">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/stein2"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/weisserstein"
-                app:civ_border_color="#FF000000"
-                app:civ_border_width="3dp">
-            </de.hdodenhof.circleimageview.CircleImageView>
-
 
         </LinearLayout>
 
@@ -333,14 +324,6 @@
             android:orientation="horizontal"
             android:rotation="180">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/stein1"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/weisserstein"
-                app:civ_border_color="#FF000000"
-                app:civ_border_width="3dp">
-            </de.hdodenhof.circleimageview.CircleImageView>
 
         </LinearLayout>
 
@@ -572,6 +555,15 @@
         app:layout_constraintStart_toEndOf="@+id/textViewGegner"
         app:layout_constraintTop_toTopOf="@+id/textViewGegner"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="569dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

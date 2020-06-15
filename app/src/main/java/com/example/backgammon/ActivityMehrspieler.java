@@ -28,21 +28,23 @@ import java.util.Random;
 
 public class ActivityMehrspieler extends AppCompatActivity {
 
-    public boolean player1 = true;
-    public boolean player2=false;
+    public boolean player1turn;
+    public boolean player2turn;
     private int Player1Points;
     private int Player2Points;
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
-    private Button rollDice;
+    private Button rollDice, rollDice2;
     private Button btnAufgeben;
-    public ImageView imageViewWuerfel1;
-    public ImageView imageViewWuerfel2;
+    public ImageView imageViewWuerfel1, imageViewWuerfel2, imageViewWuerfel3, imageViewWuerfel4;
     public static final Random RANDOM = new Random();
     public ImageView w1,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12,w13,w14,w15,  s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15;
     public TextView txt;
     public LinearLayout layout_brett1,layout_brett2,ll11,ll12,ll13,ll14,ll15,ll16;
-    public int Wert1,Wert2;
+    public int Wert1,Wert2, Wert3, Wert4;
+    public LinearLayout linearLayouts1;
+    public ViewGroup owner;
+
 
 
 
@@ -127,26 +129,59 @@ public class ActivityMehrspieler extends AppCompatActivity {
 
 
         rollDice = (Button) findViewById(R.id.rollDice);
+        rollDice2 = (Button) findViewById(R.id.rollDice2);
 
         imageViewWuerfel1 = (ImageView) findViewById(R.id.image_view_wuerfel1);
         imageViewWuerfel2 = (ImageView) findViewById(R.id.image_view_wuerfel2);
+        //imageViewWuerfel3 = (ImageView) findViewById(R.id.image_view_wuerfel3);
+        //imageViewWuerfel4 = (ImageView) findViewById(R.id.image_view_wuerfel4);
 
         rollDice.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view ) {
+
+
+                //player1turn = true;
                 Wert1 = rollDice1();
                 Wert2 = rollDice1();
+
+
 
 
                 int res1 = getResources().getIdentifier("wuerfel" + Wert1, "drawable", "com.example.backgammon");
                 int res2 = getResources().getIdentifier("wuerfel" + Wert2, "drawable", "com.example.backgammon");
 
+
                 imageViewWuerfel1.setImageResource(res1);
                 imageViewWuerfel2.setImageResource(res2);
+
+
+               rollDice.setEnabled(false);
+               rollDice2.setEnabled(true);
 
             }
         });
 
+        rollDice2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view ) {
+
+
+
+                Wert3 = rollDice1();
+                Wert4 = rollDice1();
+
+                int res1 = getResources().getIdentifier("wuerfel" + Wert3, "drawable", "com.example.backgammon");
+                int res2 = getResources().getIdentifier("wuerfel" + Wert4, "drawable", "com.example.backgammon");
+
+                imageViewWuerfel1.setImageResource(res1);
+                imageViewWuerfel2.setImageResource(res2);
+
+
+                rollDice2.setEnabled(false);
+                rollDice.setEnabled(true);
+            }
+        });
 
         //Button zum Aufgeben, damit ein extra PopUpWindow erscheint
         btnAufgeben = (Button) findViewById(R.id.btnAufgeben);
@@ -220,171 +255,19 @@ public class ActivityMehrspieler extends AppCompatActivity {
                     linearLayouts1.getId();
 
 
-                    String name = linearLayouts1.toString();
 
-                    //for (int i=11; i<40; i++) {
-   // for (int j=0; j<10; j++){
-        //if (name.contains("ll")) {
+                    weisserstein(view, owner, linearLayouts1);
+                    schwarzerstein(view, owner, linearLayouts1);
+                    if(rollDice.isActivated()){
+                        weisserstein(view, owner, linearLayouts1);
 
-            //Wert1= Wert1+11;
-            String umwandeln = Integer.toString(Wert1);
-        //if(name.contains("ll"+Wert1)){
-
-                    //if(linearLayouts1.getId()== Wert1){
-
-
-
-    if (view.getId() <= 15) {
-        int standort = owner.getId();
-        int neu = standort + Wert1;
-
-        int standort2 = owner.getId();
-        int neu2 = standort2 + Wert2;
-
-        if ((linearLayouts1.getId() == neu)) {
-
-            if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
-                linearLayouts1.addView(view);
-                Wert1 = 0;
-
-            } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
-                View vv = linearLayouts1.getChildAt(0);
-                linearLayouts1.removeAllViews();
-                linearLayouts1.addView(view);
-                layout_brett1.addView(vv);
-                Wert1 = 0;
-
-            } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
-                owner.addView(view);
-                return false;
-            } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
-                linearLayouts1.addView(view);
-                Wert1 = 0;
-
-            } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
-                linearLayouts1.addView(view);
-                Wert1 = 0;
-
-            } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
-                linearLayouts1.addView(view);
-                Wert1 = 0;
-
-            } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
-                linearLayouts1.addView(view);
-                Wert1 = 0;
-
-            }
-        } else if ((linearLayouts1.getId() == neu2)) {
-
-            if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
-                linearLayouts1.addView(view);
-                Wert2 = 0;
+                    }
+                    else {
+                       // schwarzerstein(view, owner, linearLayouts1);
+                       return false;
+                    }
 
 
-            } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
-                View vv = linearLayouts1.getChildAt(0);
-                linearLayouts1.removeAllViews();
-                linearLayouts1.addView(view);
-                layout_brett1.addView(vv);
-                Wert2 = 0;
-            } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
-                owner.addView(view);
-                return false;
-            } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
-                linearLayouts1.addView(view);
-                Wert2 = 0;
-            } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
-                linearLayouts1.addView(view);
-                Wert2 = 0;
-            } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
-                linearLayouts1.addView(view);
-                Wert2 = 0;
-            } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
-                linearLayouts1.addView(view);
-                Wert2 = 0;
-            }
-
-        } else {
-            owner.addView(view);
-            return false;
-        }
-
-
-    }
-
-        if (view.getId() >= 16) {
-
-            int standort = owner.getId();
-            int neu = standort-Wert1;
-
-            int standort2= owner.getId();
-            int neu2 = standort2-Wert2;
-
-            if((linearLayouts1.getId()==neu) ){
-
-
-            if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
-                linearLayouts1.addView(view);
-               Wert1=0;
-            } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
-                View vv = linearLayouts1.getChildAt(0);
-                linearLayouts1.removeAllViews();
-                linearLayouts1.addView(view);
-                layout_brett2.addView(vv);
-                Wert1=0;
-            } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1).getId() <= 15)) {
-                owner.addView(view);
-                return false;
-            } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(1) == null)) {
-                linearLayouts1.addView(view);
-                Wert1=0;
-            } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(2) == null)) {
-                linearLayouts1.addView(view);
-                Wert1=0;
-            } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(3) == null)) {
-                linearLayouts1.addView(view);
-                Wert1=0;
-            } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(4) == null)) {
-                linearLayouts1.addView(view);
-                Wert1=0;
-            }
-
-            }
-            else if( (linearLayouts1.getId()==neu2)){
-
-
-                if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
-                    linearLayouts1.addView(view);
-                    Wert2=0;
-                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
-                    View vv = linearLayouts1.getChildAt(0);
-                    linearLayouts1.removeAllViews();
-                    linearLayouts1.addView(view);
-                    layout_brett2.addView(vv);
-                    Wert2=0;
-                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1).getId() <= 15)) {
-                    owner.addView(view);
-                    return false;
-                } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(1) == null)) {
-                    linearLayouts1.addView(view);
-                    Wert2=0;
-                } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(2) == null)) {
-                    linearLayouts1.addView(view);
-                    Wert2=0;
-                } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(3) == null)) {
-                    linearLayouts1.addView(view);
-                    Wert2=0;
-                } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(4) == null)) {
-                    linearLayouts1.addView(view);
-                    Wert2=0;
-                }
-
-            }
-        else{
-            owner.addView(view);
-            return false;
-        }
-        }
             view.setVisibility(View.VISIBLE);
             break;
 
@@ -396,7 +279,168 @@ public class ActivityMehrspieler extends AppCompatActivity {
         }
             return true;
     }}
+    @SuppressLint("ResourceType")
+    public boolean weisserstein(View view, ViewGroup owner, LinearLayout linearLayouts1 ) {
+        if (view.getId() <= 15) {
+            int standort = owner.getId();
+            int neuerStandort = standort + Wert1;
 
+            int standort2 = owner.getId();
+            int neuerStandort2 = standort2 + Wert2;
+
+            if ((linearLayouts1.getId() == neuerStandort)) {
+
+                if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert1 = 0;
+
+                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                    View vv = linearLayouts1.getChildAt(0);
+                    linearLayouts1.removeAllViews();
+                    linearLayouts1.addView(view);
+                    layout_brett1.addView(vv);
+                    Wert1 = 0;
+
+                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
+                    owner.addView(view);
+                    return false;
+                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert1 = 0;
+
+                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert1 = 0;
+
+                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert1 = 0;
+
+                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert1 = 0;
+
+                }
+            } else if ((linearLayouts1.getId() == neuerStandort2)) {
+
+                if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert2 = 0;
+
+
+                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                    View vv = linearLayouts1.getChildAt(0);
+                    linearLayouts1.removeAllViews();
+                    linearLayouts1.addView(view);
+                    layout_brett1.addView(vv);
+                    Wert2 = 0;
+                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
+                    owner.addView(view);
+                    return false;
+                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert2 = 0;
+                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert2 = 0;
+                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert2 = 0;
+                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert2 = 0;
+                }
+
+            } else {
+                owner.addView(view);
+                return false;
+            }
+
+
+
+        }
+
+    return false;}
+
+
+    @SuppressLint("ResourceType")
+    public boolean schwarzerstein(View view, ViewGroup owner, LinearLayout linearLayouts1 ){
+
+
+        if (view.getId() >= 16) {
+
+            int standort = owner.getId();
+            int neu = standort-Wert3;
+
+            int standort2= owner.getId();
+            int neu2 = standort2-Wert4;
+
+            if((linearLayouts1.getId()==neu) ){
+
+
+                if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert3=0;
+                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                    View vv = linearLayouts1.getChildAt(0);
+                    linearLayouts1.removeAllViews();
+                    linearLayouts1.addView(view);
+                    layout_brett2.addView(vv);
+                    Wert3=0;
+                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1).getId() <= 15)) {
+                    owner.addView(view);
+                    return false;
+                } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert3=0;
+                } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(2) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert3=0;
+                } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(3) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert3=0;
+                } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(4) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert3=0;
+                }
+
+            }
+            else if( (linearLayouts1.getId()==neu2)){
+
+
+                if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert4=0;
+                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                    View vv = linearLayouts1.getChildAt(0);
+                    linearLayouts1.removeAllViews();
+                    linearLayouts1.addView(view);
+                    layout_brett2.addView(vv);
+                    Wert4=0;
+                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1).getId() <= 15)) {
+                    owner.addView(view);
+                    return false;
+                } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert4=0;
+                } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(2) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert4=0;
+                } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(3) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert4=0;
+                } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(4) == null)) {
+                    linearLayouts1.addView(view);
+                    Wert4=0;
+                }
+
+            }
+            else{
+                owner.addView(view);
+                return false;
+            }
+        }return false;
+    }
 
     public void openpopupinformation() {
         PopUp popUp = new PopUp();

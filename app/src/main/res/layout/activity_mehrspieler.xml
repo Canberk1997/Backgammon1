@@ -260,7 +260,7 @@
         android:rotation="180"></LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_brett1"
+        android:id="@+id/ll10"
         android:layout_width="160dp"
         android:layout_height="45dp"
         android:background="@android:color/black"
@@ -269,7 +269,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_brett2"
+        android:id="@+id/ll35"
         android:layout_width="160dp"
         android:layout_height="45dp"
         android:background="@android:color/black"

@@ -40,12 +40,13 @@ public class ActivityMehrspieler extends AppCompatActivity {
     public static final Random RANDOM = new Random();
     public ImageView w1,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12,w13,w14,w15,  s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15;
     public TextView txt;
-    public LinearLayout ll10,ll11,ll12,ll13,ll14,ll15,ll16,ll35;
-    public int Wert1,Wert2, Wert3, Wert4;
+    public LinearLayout ll11,ll12,ll13,ll14,ll15,ll16,ll17,ll18,ll19,ll20,ll21,ll22,ll23,ll24,ll25,ll26,ll27,ll28,ll29,ll30,ll31,ll32,ll33,ll34,ll35;
+    public int Wert1,Wert2, Wert3, Wert4,Wert11,Wert22, Wert33,Wert44;
     public LinearLayout linearLayouts1;
     public ViewGroup owner;
     public int child;
     int darfodernet;
+    public ViewGroup ll10;
 
 
 
@@ -90,7 +91,32 @@ public class ActivityMehrspieler extends AppCompatActivity {
         findViewById(R.id.ll34).setOnDragListener(new MyDragListener());
         findViewById(R.id.ll35).setOnDragListener(new MyDragListener());
 
+
         ll10 = (LinearLayout) findViewById(R.id.ll10);
+        ll11 = (LinearLayout) findViewById(R.id.ll11);
+        ll12 = (LinearLayout) findViewById(R.id.ll12);
+        ll13 = (LinearLayout) findViewById(R.id.ll13);
+        ll14 = (LinearLayout) findViewById(R.id.ll14);
+        ll15 = (LinearLayout) findViewById(R.id.ll15);
+        ll16 = (LinearLayout) findViewById(R.id.ll16);
+        ll17 = (LinearLayout) findViewById(R.id.ll17);
+        ll18 = (LinearLayout) findViewById(R.id.ll18);
+        ll19 = (LinearLayout) findViewById(R.id.ll19);
+        ll20 = (LinearLayout) findViewById(R.id.ll20);
+        ll21 = (LinearLayout) findViewById(R.id.ll21);
+        ll22 = (LinearLayout) findViewById(R.id.ll22);
+        ll23 = (LinearLayout) findViewById(R.id.ll23);
+        ll24 = (LinearLayout) findViewById(R.id.ll24);
+        ll25 = (LinearLayout) findViewById(R.id.ll25);
+        ll26 = (LinearLayout) findViewById(R.id.ll26);
+        ll27 = (LinearLayout) findViewById(R.id.ll27);
+        ll28 = (LinearLayout) findViewById(R.id.ll28);
+        ll29 = (LinearLayout) findViewById(R.id.ll29);
+        ll30 = (LinearLayout) findViewById(R.id.ll30);
+        ll31 = (LinearLayout) findViewById(R.id.ll31);
+        ll32 = (LinearLayout) findViewById(R.id.ll32);
+        ll33 = (LinearLayout) findViewById(R.id.ll33);
+        ll34 = (LinearLayout) findViewById(R.id.ll34);
         ll35 = (LinearLayout) findViewById(R.id.ll35);
 
 
@@ -135,32 +161,29 @@ public class ActivityMehrspieler extends AppCompatActivity {
 
         imageViewWuerfel1 = (ImageView) findViewById(R.id.image_view_wuerfel1);
         imageViewWuerfel2 = (ImageView) findViewById(R.id.image_view_wuerfel2);
-        //imageViewWuerfel3 = (ImageView) findViewById(R.id.image_view_wuerfel3);
-        //imageViewWuerfel4 = (ImageView) findViewById(R.id.image_view_wuerfel4);
 
         rollDice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view ) {
 
-
-                //player1turn = true;
                 Wert1 = rollDice1();
                 Wert2 = rollDice1();
 
-
-
+                if (Wert1 == Wert2){
+                    Wert11=Wert1;
+                    Wert22=Wert2;
+                }
+                else{
+                    Wert11=0;
+                    Wert22=0;
+                }
 
                 int res1 = getResources().getIdentifier("wuerfel" + Wert1, "drawable", "com.example.backgammon");
                 int res2 = getResources().getIdentifier("wuerfel" + Wert2, "drawable", "com.example.backgammon");
-
-
                 imageViewWuerfel1.setImageResource(res1);
                 imageViewWuerfel2.setImageResource(res2);
-
-
                rollDice.setEnabled(false);
                rollDice2.setEnabled(true);
-
             }
         });
 
@@ -168,10 +191,16 @@ public class ActivityMehrspieler extends AppCompatActivity {
             @Override
             public void onClick(View view ) {
 
-
-
                 Wert3 = rollDice1();
                 Wert4 = rollDice1();
+                if (Wert3 == Wert4){
+                    Wert33=Wert3;
+                    Wert44=Wert4;
+                }
+                else{
+                    Wert33=0;
+                    Wert44=0;
+                }
 
                 int res1 = getResources().getIdentifier("wuerfel" + Wert3, "drawable", "com.example.backgammon");
                 int res2 = getResources().getIdentifier("wuerfel" + Wert4, "drawable", "com.example.backgammon");
@@ -193,19 +222,14 @@ public class ActivityMehrspieler extends AppCompatActivity {
                 openpopupinformation();
             }
         });
-
-
         //Für Spielstand aber noch nicht vollständig
         textViewPlayer1 = findViewById(R.id.textViewSie);
         textViewPlayer2 = findViewById(R.id.textViewGegner);
-
-
     }
 
 
     public static int rollDice1() {
         return RANDOM.nextInt(6) + 1;
-
 
     }
 
@@ -250,35 +274,623 @@ public class ActivityMehrspieler extends AppCompatActivity {
                     View view = (View) event.getLocalState();
                     ViewGroup owner = (ViewGroup) view.getParent();
                     owner.removeView(view);
-                    // LinearLayout container = (LinearLayout) v;
-                    // container.addView(view);
 
                     LinearLayout linearLayouts1 = (LinearLayout) v;
                     linearLayouts1.getId();
 
+                    ViewGroup on = (ViewGroup) ll10.getParent();
 
 
-                    weisserstein(view, owner, linearLayouts1);
-                    schwarzerstein(view, owner, linearLayouts1);
+                    if(view.getId()<=15){
 
-                  /*  if(rollDice.isActivated()) {
-                        weisserstein(view, owner, linearLayouts1);
+
+                        int standort = owner.getId();
+                        int neuerStandort = standort + Wert1;
+
+                        int standort2 = owner.getId();
+                        int neuerStandort2 = standort2 + Wert2;
+
+                        int standort11 = owner.getId();
+                        int neuerStandort11 = standort11 + Wert11;
+
+                        int standort22 = owner.getId();
+                        int neuerStandort22 = standort22 + Wert22;
+
+
+                        if(ll10.getChildCount()>0){
+
+                            if(standort==10){
+                                //logik
+
+
+                                if ((linearLayouts1.getId() == neuerStandort)) {
+
+                                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert1 = 0;
+
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                        View vv = linearLayouts1.getChildAt(0);
+                                        linearLayouts1.removeAllViews();
+                                        linearLayouts1.addView(view);
+                                        ll35.addView(vv);
+                                        Wert1 = 0;
+
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
+                                        owner.addView(view);
+                                        return false;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert1 = 0;
+
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert1 = 0;
+
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert1 = 0;
+
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert1 = 0;
+
+                                    }else{
+                                        owner.addView(view);
+                                        return false;
+                                    }
+                                } else if ((linearLayouts1.getId() == neuerStandort2)) {
+
+                                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert2 = 0;
+
+
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                        View vv = linearLayouts1.getChildAt(0);
+                                        linearLayouts1.removeAllViews();
+                                        linearLayouts1.addView(view);
+                                        ll35.addView(vv);
+                                        Wert2 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
+                                        owner.addView(view);
+                                        return false;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert2 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert2 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert2 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert2 = 0;
+                                    }else{
+                                        owner.addView(view);
+                                        return false;
+                                    }
+
+                            }else if ((linearLayouts1.getId() == neuerStandort11)) {
+
+                                if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert11 = 0;
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                    View vv = linearLayouts1.getChildAt(0);
+                                    linearLayouts1.removeAllViews();
+                                    linearLayouts1.addView(view);
+                                    ll35.addView(vv);
+                                    Wert11 = 0;
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
+                                    owner.addView(view);
+                                    return false;
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert11 = 0;
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert11 = 0;
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert11 = 0;
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert11 = 0;
+
+                                }else{
+                                    owner.addView(view);
+                                    return false;
+                                }
+                            } else if ((linearLayouts1.getId() == neuerStandort22)) {
+
+                                if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert22 = 0;
+
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                    View vv = linearLayouts1.getChildAt(0);
+                                    linearLayouts1.removeAllViews();
+                                    linearLayouts1.addView(view);
+                                    ll35.addView(vv);
+                                    Wert22 = 0;
+                                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
+                                    owner.addView(view);
+                                    return false;
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert22 = 0;
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert22 = 0;
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert22 = 0;
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert22 = 0;
+                                }else{
+                                    owner.addView(view);
+                                    return false;
+                                }
+
+                            }
+                        }
+                            else{
+                                owner.addView(view);
+                                return false;
+                            }
+
+                        }else{
+
+
+                            //logik
+
+                            if ((linearLayouts1.getId() == neuerStandort)) {
+
+                                if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert1 = 0;
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                    View vv = linearLayouts1.getChildAt(0);
+                                    linearLayouts1.removeAllViews();
+                                    linearLayouts1.addView(view);
+                                    ll35.addView(vv);
+                                    Wert1 = 0;
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
+                                    owner.addView(view);
+                                    return false;
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert1 = 0;
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert1 = 0;
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert1 = 0;
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert1 = 0;
+
+                                }
+                            } else if ((linearLayouts1.getId() == neuerStandort2)) {
+
+                                if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert2 = 0;
+
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                    View vv = linearLayouts1.getChildAt(0);
+                                    linearLayouts1.removeAllViews();
+                                    linearLayouts1.addView(view);
+                                    ll35.addView(vv);
+                                    Wert2 = 0;
+                                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
+                                    owner.addView(view);
+                                    return false;
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert2 = 0;
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert2 = 0;
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert2 = 0;
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert2 = 0;
+                                }else{
+                                    owner.addView(view);
+                                    return false;
+                                }
+
+                            }
+                            else if ((linearLayouts1.getId() == neuerStandort11)) {
+
+                                if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert11 = 0;
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                    View vv = linearLayouts1.getChildAt(0);
+                                    linearLayouts1.removeAllViews();
+                                    linearLayouts1.addView(view);
+                                    ll35.addView(vv);
+                                    Wert11 = 0;
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
+                                    owner.addView(view);
+                                    return false;
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert11 = 0;
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert11 = 0;
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert11 = 0;
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert11 = 0;
+
+                                }else{
+                                    owner.addView(view);
+                                    return false;
+                                }
+                            } else if ((linearLayouts1.getId() == neuerStandort22)) {
+
+                                if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert22 = 0;
+
+
+                                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                    View vv = linearLayouts1.getChildAt(0);
+                                    linearLayouts1.removeAllViews();
+                                    linearLayouts1.addView(view);
+                                    ll35.addView(vv);
+                                    Wert22 = 0;
+                                } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
+                                    owner.addView(view);
+                                    return false;
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert22 = 0;
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert22 = 0;
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert22 = 0;
+                                } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
+                                    linearLayouts1.addView(view);
+                                    Wert22 = 0;
+                                }else{
+                                    owner.addView(view);
+                                    return false;
+                                }
+
+                            }
+
+
+
+                            else{
+                                owner.addView(view);
+                                return false;
+                            }
+
+
+                        }
                     }
 
-                    else {
-                        // schwarzerstein(view, owner, linearLayouts1);
-                        return false;
-                    }*/
-                 /*
-                  if (layout_brett1.getChildAt(0)!=null){
-                      weisserstein(view, owner,linearLayouts1);
-                  }
-                  else{
-                      return false;
-                  }*/
 
 
+                    else if(view.getId()>=16) {
 
+
+                        int standort3 = owner.getId();
+                        int neuerStandort3 = standort3 - Wert3;
+
+                        int standort4 = owner.getId();
+                        int neuerStandort4 = standort4 - Wert4;
+
+                        int standort33 = owner.getId();
+                        int neuerStandort33 = standort33 - Wert33;
+
+                        int standort44 = owner.getId();
+                        int neuerStandort44 = standort44 - Wert44;
+
+                        if (ll35.getChildCount() > 0) {
+                            //ölü
+                            if (standort3 == 35) {
+                                //ölü tas alindi -> logik
+                                if ((linearLayouts1.getId() == neuerStandort3)) {
+
+
+                                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert3 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                        View vv = linearLayouts1.getChildAt(0);
+                                        linearLayouts1.removeAllViews();
+                                        linearLayouts1.addView(view);
+                                        ll10.addView(vv);
+                                        Wert3 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1).getId() <= 15)) {
+                                        owner.addView(view);
+                                        return false;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert3 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(2) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert3 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(3) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert3 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(4) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert3 = 0;
+                                    } else {
+                                        owner.addView(view);
+                                        return false;
+                                    }
+
+                                } else if ((linearLayouts1.getId() == neuerStandort4)) {
+
+
+                                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert4 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                        View vv = linearLayouts1.getChildAt(0);
+                                        linearLayouts1.removeAllViews();
+                                        linearLayouts1.addView(view);
+                                        ll10.addView(vv);
+                                        Wert4 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1).getId() <= 15)) {
+                                        owner.addView(view);
+                                        return false;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert4 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(2) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert4 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(3) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert4 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(4) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert4 = 0;
+                                    } else {
+                                        owner.addView(view);
+                                        return false;
+                                    }
+
+                                } else if ((linearLayouts1.getId() == neuerStandort33)) {
+
+
+                                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert33 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                        View vv = linearLayouts1.getChildAt(0);
+                                        linearLayouts1.removeAllViews();
+                                        linearLayouts1.addView(view);
+                                        ll10.addView(vv);
+                                        Wert33 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1).getId() <= 15)) {
+                                        owner.addView(view);
+                                        return false;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert33 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(2) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert33 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(3) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert33 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(4) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert33 = 0;
+                                    } else {
+                                        owner.addView(view);
+                                        return false;
+                                    }
+
+                                } else if ((linearLayouts1.getId() == neuerStandort44)) {
+
+
+                                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert44 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                        View vv = linearLayouts1.getChildAt(0);
+                                        linearLayouts1.removeAllViews();
+                                        linearLayouts1.addView(view);
+                                        ll10.addView(vv);
+                                        Wert44 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1).getId() <= 15)) {
+                                        owner.addView(view);
+                                        return false;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert44 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(2) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert44 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(3) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert44 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(4) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert44 = 0;
+                                    } else {
+                                        owner.addView(view);
+                                        return false;
+                                    }
+
+                                } else {
+                                    owner.addView(view);
+                                    return false;
+                                }
+
+                            }} else {
+                                //ölü degil -> Logik
+                                if ((linearLayouts1.getId() == neuerStandort3)) {
+
+
+                                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert3 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                        View vv = linearLayouts1.getChildAt(0);
+                                        linearLayouts1.removeAllViews();
+                                        linearLayouts1.addView(view);
+                                        ll10.addView(vv);
+                                        Wert3 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1).getId() <= 15)) {
+                                        owner.addView(view);
+                                        return false;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert3 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(2) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert3 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(3) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert3 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(4) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert3 = 0;
+                                    } else {
+                                        owner.addView(view);
+                                        return false;
+                                    }
+
+                                } else if ((linearLayouts1.getId() == neuerStandort4)) {
+
+
+                                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert4 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                        View vv = linearLayouts1.getChildAt(0);
+                                        linearLayouts1.removeAllViews();
+                                        linearLayouts1.addView(view);
+                                        ll10.addView(vv);
+                                        Wert4 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1).getId() <= 15)) {
+                                        owner.addView(view);
+                                        return false;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert4 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(2) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert4 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(3) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert4 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(4) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert4 = 0;
+                                    } else {
+                                        owner.addView(view);
+                                        return false;
+                                    }
+
+                                } else if ((linearLayouts1.getId() == neuerStandort33)) {
+
+
+                                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert33 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                        View vv = linearLayouts1.getChildAt(0);
+                                        linearLayouts1.removeAllViews();
+                                        linearLayouts1.addView(view);
+                                        ll10.addView(vv);
+                                        Wert33 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1).getId() <= 15)) {
+                                        owner.addView(view);
+                                        return false;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert33 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(2) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert33 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(3) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert33 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(4) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert33 = 0;
+                                    } else {
+                                        owner.addView(view);
+                                        return false;
+                                    }
+
+                                } else if ((linearLayouts1.getId() == neuerStandort44)) {
+
+
+                                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert44 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
+                                        View vv = linearLayouts1.getChildAt(0);
+                                        linearLayouts1.removeAllViews();
+                                        linearLayouts1.addView(view);
+                                        ll10.addView(vv);
+                                        Wert44 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1).getId() <= 15)) {
+                                        owner.addView(view);
+                                        return false;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert44 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(2) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert44 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(3) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert44 = 0;
+                                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(4) == null)) {
+                                        linearLayouts1.addView(view);
+                                        Wert44 = 0;
+                                    } else {
+                                        owner.addView(view);
+                                        return false;
+                                    }
+
+                                } else {
+                                    owner.addView(view);
+                                    return false;
+                                }
+                            }}
 
             view.setVisibility(View.VISIBLE);
             break;
@@ -291,291 +903,7 @@ public class ActivityMehrspieler extends AppCompatActivity {
         }
             return true;
     }}
-    @SuppressLint("ResourceType")
-    public boolean weisserstein(View view, ViewGroup owner, LinearLayout linearLayouts1 ) {
 
-       View brettView = ll10.getChildAt(0);
-       View brettView2 = ll10.getChildAt(1);
-
-     /*  if(Wert1==Wert2){
-           int standort = owner.getId();
-           int neuerStandort = standort + Wert1 + Wert1;
-
-           int standort2 = owner.getId();
-           int neuerStandort2 = standort2 + Wert2 +Wert2;
-       }
-*/
-        if (view.getId() <= 15 && brettView == null) {
-            {
-
-
-                int standort = owner.getId();
-                int neuerStandort = standort + Wert1;
-
-                int standort2 = owner.getId();
-                int neuerStandort2 = standort2 + Wert2;
-
-                if ((linearLayouts1.getId() == neuerStandort)) {
-
-                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert1 = 0;
-
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
-                        View vv = linearLayouts1.getChildAt(0);
-                        linearLayouts1.removeAllViews();
-                        linearLayouts1.addView(view);
-                        ll35.addView(vv);
-                        Wert1 = 0;
-
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
-                        owner.addView(view);
-                        return false;
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert1 = 0;
-
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert1 = 0;
-
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert1 = 0;
-
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert1 = 0;
-
-                    }
-                } else if ((linearLayouts1.getId() == neuerStandort2)) {
-
-                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert2 = 0;
-
-
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
-                        View vv = linearLayouts1.getChildAt(0);
-                        linearLayouts1.removeAllViews();
-                        linearLayouts1.addView(view);
-                        ll35.addView(vv);
-                        Wert2 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
-                        owner.addView(view);
-                        return false;
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert2 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert2 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert2 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert2 = 0;
-                    }
-
-                } else {
-                    owner.addView(view);
-                    return false;
-                }
-
-
-            }
-        }
-        else if((view.getId() <= 15 && brettView != null) || (view.getId() <= 15 && brettView2 != null)){
-
-
-          int i = ll10.getChildAt(0).getId();
-          //int j= ll10.getChildAt(1).getId();
-
-            int standort = owner.getId();
-            int neuerStandort = standort + Wert1;
-
-            int standort2 = owner.getId();
-            int neuerStandort2 = standort2 + Wert2;
-
-            if ((view.getId() == ll10.getChildAt(0).getId()) ) {
-
-                if ((linearLayouts1.getId() == neuerStandort)) {
-
-                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert1 = 0;
-
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
-                        View vv = linearLayouts1.getChildAt(0);
-                        linearLayouts1.removeAllViews();
-                        linearLayouts1.addView(view);
-                        ll35.addView(vv);
-                        Wert1 = 0;
-
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
-                        owner.addView(view);
-                        return false;
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert1 = 0;
-
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert1 = 0;
-
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert1 = 0;
-
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert1 = 0;
-
-                    }
-                } else if ((linearLayouts1.getId() == neuerStandort2)) {
-
-                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert2 = 0;
-
-
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1) == null)) {
-                        View vv = linearLayouts1.getChildAt(0);
-                        linearLayouts1.removeAllViews();
-                        linearLayouts1.addView(view);
-                        ll35.addView(vv);
-                        Wert2 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 16) && (linearLayouts1.getChildAt(1).getId() >= 16)) {
-                        owner.addView(view);
-                        return false;
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert2 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(2) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert2 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(3) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert2 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(4) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert2 = 0;
-                    }
-
-                } else {
-                    owner.addView(view);
-                    return false;
-                }
-
-
-            }
-
-
-            else if (!(view.getId() == ll10.getChildAt(0).getId()) || (view.getId() == ll10.getChildAt(0).getId())) {
-                owner.addView(view);
-                return false;
-            }
-        }
-        else{
-
-         return false;
-
-        }
-
-    return false;}
-
-
-    @SuppressLint("ResourceType")
-    public boolean schwarzerstein(View view, ViewGroup owner, LinearLayout linearLayouts1 ){
-
-        View brettView2 = ll35.getChildAt(0);
-
-
-        if (view.getId() >= 16 && brettView2 == null) {
-            {
-                int standort = owner.getId();
-                int neu = standort - Wert3;
-
-                int standort2 = owner.getId();
-                int neu2 = standort2 - Wert4;
-
-                if ((linearLayouts1.getId() == neu)) {
-
-
-                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert3 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
-                        View vv = linearLayouts1.getChildAt(0);
-                        linearLayouts1.removeAllViews();
-                        linearLayouts1.addView(view);
-                        ll10.addView(vv);
-                        Wert3 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1).getId() <= 15)) {
-                        owner.addView(view);
-                        return false;
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(1) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert3 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(2) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert3 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(3) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert3 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(4) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert3 = 0;
-                    }
-
-                } else if ((linearLayouts1.getId() == neu2)) {
-
-
-                    if ((linearLayouts1.getChildAt(0) == null) && (linearLayouts1.getChildAt(1) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert4 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1) == null)) {
-                        View vv = linearLayouts1.getChildAt(0);
-                        linearLayouts1.removeAllViews();
-                        linearLayouts1.addView(view);
-                        ll10.addView(vv);
-                        Wert4 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() <= 15) && (linearLayouts1.getChildAt(1).getId() <= 15)) {
-                        owner.addView(view);
-                        return false;
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(1) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert4 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(2) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert4 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(3) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert4 = 0;
-                    } else if ((linearLayouts1.getChildAt(0).getId() >= 15) && (linearLayouts1.getChildAt(4) == null)) {
-                        linearLayouts1.addView(view);
-                        Wert4 = 0;
-                    }
-
-                } else {
-                    owner.addView(view);
-                    return false;
-                }
-            }
-        }
-          else if(view.getId() >= 16 && brettView2 != null){
-
-                owner.addView(view);
-                return false;
-            }
-            else{
-
-                return false;
-
-            }
-
-            return false;}
 
 
     public void openpopupinformation() {
@@ -620,10 +948,32 @@ public class ActivityMehrspieler extends AppCompatActivity {
         s14.setId(29);
         s15.setId(30);
 
-        //layout_brett1.setId(16);
-
-
-        //txt.setText(""+w1);
+        ll10.setId(10);
+        ll11.setId(11);
+        ll12.setId(12);
+        ll13.setId(13);
+        ll14.setId(14);
+        ll15.setId(15);
+        ll16.setId(16);
+        ll17.setId(17);
+        ll18.setId(18);
+        ll19.setId(19);
+        ll20.setId(20);
+        ll21.setId(21);
+        ll22.setId(22);
+        ll23.setId(23);
+        ll24.setId(24);
+        ll25.setId(25);
+        ll26.setId(26);
+        ll27.setId(27);
+        ll28.setId(28);
+        ll29.setId(29);
+        ll30.setId(30);
+        ll31.setId(31);
+        ll32.setId(32);
+        ll33.setId(33);
+        ll34.setId(34);
+        ll35.setId(35);
     }
 }
 

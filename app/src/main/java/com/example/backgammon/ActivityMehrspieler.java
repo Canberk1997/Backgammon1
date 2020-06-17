@@ -48,6 +48,8 @@ public class ActivityMehrspieler extends AppCompatActivity {
     int darfodernet;
     public ViewGroup ll10;
 
+public    ViewGroup [] larray = new LinearLayout[25];
+
 
 
 
@@ -120,7 +122,10 @@ public class ActivityMehrspieler extends AppCompatActivity {
         ll35 = (LinearLayout) findViewById(R.id.ll35);
 
 
+
+
         txt = (TextView) findViewById(R.id.textView);
+
 
         w1 = (ImageView) findViewById(R.id.weisserstein1);
         w2 = (ImageView) findViewById(R.id.weisserstein2);
@@ -277,9 +282,6 @@ public class ActivityMehrspieler extends AppCompatActivity {
 
                     LinearLayout linearLayouts1 = (LinearLayout) v;
                     linearLayouts1.getId();
-
-                    ViewGroup on = (ViewGroup) ll10.getParent();
-
 
                     if(view.getId()<=15){
 
@@ -974,6 +976,28 @@ public class ActivityMehrspieler extends AppCompatActivity {
         ll33.setId(33);
         ll34.setId(34);
         ll35.setId(35);
+
+        larray[0]=ll10;
+        larray[1]=ll11;
+        larray[2]=ll12;
+        larray[3]=ll13;
+        larray[4]=ll14;
+        larray[5]=ll15;
+        larray[6]=ll16;
+        larray[7]=ll17;
+
+        for(int i= 0; i<=larray.length;i++){
+            for(int j=0; j<=5;j++){
+                if (larray[i].getChildAt(j).getId()<=15){
+                    //erlaube nicht zu sammeln
+                }
+                else{
+                    //sammel
+                }
+                           }
+        }
+
+        txt.setText(""+larray[1].getChildAt(1).getId());
     }
 }
 

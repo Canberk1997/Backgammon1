@@ -13,7 +13,7 @@
     <GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="320dp"
-        android:layout_height="480dp"
+        android:layout_height="490dp"
         android:layout_marginBottom="50dp"
         android:background="@drawable/shape"
         android:columnCount="2"
@@ -26,228 +26,118 @@
 
 
         <LinearLayout
-            android:id="@+id/ll_0"
+            android:id="@+id/ll22"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:layout_row="0"
             android:background="@drawable/schwarzesdreieck"
             android:orientation="horizontal">
 
-            <LinearLayout
-            android:id="@+id/ll_01"
-            android:layout_width="20dp"
-            android:layout_height="35dp"
-            android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/weisserstein1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/weisserstein"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/weisserstein2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/weisserstein"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/weisserstein3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/weisserstein"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/weisserstein4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/weisserstein"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/weisserstein5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/weisserstein"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
 
-        </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_02"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_03"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_04"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_05"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_06"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_07"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/ll_08"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_1"
+            android:id="@+id/ll23"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/weissesdreieck"
             android:orientation="horizontal"
             android:rotation="180">
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schwarzerstein1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/schwarzerstein"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
-            <LinearLayout
-                android:id="@+id/ll_11"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schwarzerstein2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/schwarzerstein"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
-            </LinearLayout>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schwarzerstein3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/schwarzerstein"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
-            <LinearLayout
-                android:id="@+id/ll_12"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schwarzerstein4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/schwarzerstein"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp">
 
-            </LinearLayout>
+            </de.hdodenhof.circleimageview.CircleImageView>
 
-            <LinearLayout
-                android:id="@+id/ll_13"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schwarzerstein5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/schwarzerstein"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp">
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_14"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_15"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_16"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_17"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_18"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
+            </de.hdodenhof.circleimageview.CircleImageView>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_2"
+            android:id="@+id/ll21"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/weissesdreieck"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:id="@+id/ll_21"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_22"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_23"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_24"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_25"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_26"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_27"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_28"
-                android:layout_width="20dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-        </LinearLayout>
+            android:orientation="horizontal" />
 
         <LinearLayout
-            android:id="@+id/ll4"
+            android:id="@+id/ll24"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/schwarzesdreieck"
@@ -257,14 +147,14 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll5"
+            android:id="@+id/ll20"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/schwarzesdreieck"
             android:orientation="horizontal"></LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll6"
+            android:id="@+id/ll25"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/weissesdreieck"
@@ -272,14 +162,14 @@
             android:rotation="180"></LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll7"
+            android:id="@+id/ll19"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/weissesdreieck"
             android:orientation="horizontal"></LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll8"
+            android:id="@+id/ll26"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/schwarzesdreieck"
@@ -287,84 +177,71 @@
             android:rotation="180"></LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll9"
+            android:id="@+id/ll18"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/schwarzesdreieck"
             android:orientation="horizontal">
 
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schwarzerstein6"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/schwarzerstein"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schwarzerstein7"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/schwarzerstein"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schwarzerstein8"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/schwarzerstein"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
         </LinearLayout>
 
 
         <LinearLayout
-            android:id="@+id/ll36"
+            android:id="@+id/ll27"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/weissesdreieck"
             android:orientation="horizontal"
             android:rotation="180">
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/weisserstein6"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/weisserstein"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
-        </LinearLayout>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/weisserstein7"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/weisserstein"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
-        <LinearLayout
-            android:id="@+id/ll11"
-            android:layout_width="160dp"
-            android:layout_height="35dp"
-            android:background="@drawable/weissesdreieck"
-            android:orientation="horizontal"></LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll12"
-            android:layout_width="160dp"
-            android:layout_height="35dp"
-            android:background="@drawable/schwarzesdreieck"
-            android:orientation="horizontal"
-            android:rotation="180">
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll13"
-            android:layout_width="160dp"
-            android:layout_height="45dp"
-            android:background="@android:color/black"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll14"
-            android:layout_width="160dp"
-            android:layout_height="45dp"
-            android:background="@android:color/black"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll15"
-            android:layout_width="160dp"
-            android:layout_height="35dp"
-            android:background="@drawable/schwarzesdreieck"
-            android:orientation="horizontal">
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll16"
-            android:layout_width="160dp"
-            android:layout_height="35dp"
-            android:background="@drawable/weissesdreieck"
-            android:orientation="horizontal"
-            android:rotation="180">
-
-
-
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/weisserstein8"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/weisserstein"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
         </LinearLayout>
 
         <LinearLayout
@@ -375,7 +252,139 @@
             android:orientation="horizontal"></LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll18"
+            android:id="@+id/ll28"
+            android:layout_width="160dp"
+            android:layout_height="35dp"
+            android:background="@drawable/schwarzesdreieck"
+            android:orientation="horizontal"
+            android:rotation="180"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll36"
+            android:layout_width="160dp"
+            android:layout_height="35dp"
+            android:background="@android:color/black"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll37"
+            android:layout_width="160dp"
+            android:layout_height="35dp"
+            android:background="@android:color/black"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll16"
+            android:layout_width="160dp"
+            android:layout_height="35dp"
+            android:background="@drawable/schwarzesdreieck"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schwarzerstein9"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/schwarzerstein"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schwarzerstein10"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/schwarzerstein"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schwarzerstein11"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/schwarzerstein"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schwarzerstein12"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/schwarzerstein"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schwarzerstein13"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/schwarzerstein"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll29"
+            android:layout_width="160dp"
+            android:layout_height="35dp"
+            android:background="@drawable/weissesdreieck"
+            android:orientation="horizontal"
+            android:rotation="180">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/weisserstein9"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/weisserstein"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/weisserstein10"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/weisserstein"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/weisserstein11"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/weisserstein"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/weisserstein12"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/weisserstein"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/weisserstein13"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/weisserstein"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll15"
+            android:layout_width="160dp"
+            android:layout_height="35dp"
+            android:background="@drawable/weissesdreieck"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll30"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/schwarzesdreieck"
@@ -386,7 +395,7 @@
 
 
         <LinearLayout
-            android:id="@+id/ll19"
+            android:id="@+id/ll14"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/schwarzesdreieck"
@@ -395,7 +404,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll20"
+            android:id="@+id/ll31"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/weissesdreieck"
@@ -405,7 +414,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll21"
+            android:id="@+id/ll13"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/weissesdreieck"
@@ -414,7 +423,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll22"
+            android:id="@+id/ll32"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/schwarzesdreieck"
@@ -424,7 +433,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll23"
+            android:id="@+id/ll12"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/schwarzesdreieck"
@@ -433,7 +442,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll24"
+            android:id="@+id/ll33"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/weissesdreieck"
@@ -443,69 +452,115 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll25"
+            android:id="@+id/ll11"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/weissesdreieck"
             android:orientation="horizontal">
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/weisserstein14"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/weisserstein"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/weisserstein15"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/weisserstein"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll26"
+            android:id="@+id/ll34"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/schwarzesdreieck"
             android:orientation="horizontal"
             android:rotation="180">
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schwarzerstein14"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/schwarzerstein"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schwarzerstein15"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/schwarzerstein"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp"></de.hdodenhof.circleimageview.CircleImageView>
 
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/ll10"
+            android:layout_width="160dp"
+            android:layout_height="35dp"
+            android:background="#000000"
+            android:orientation="horizontal"
+            android:rotation="180">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll35"
+            android:layout_width="160dp"
+            android:layout_height="35dp"
+            android:background="#000000"
+            android:orientation="horizontal"
+            android:rotation="180">
+
+        </LinearLayout>
     </GridLayout>
 
 
     <ImageView
         android:id="@+id/image_view_wuerfel2"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:rotation="90"
         android:src="@drawable/wuerfel1"
         app:layout_column="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rollDice"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewGegner"
+        app:layout_constraintEnd_toStartOf="@+id/textViewGegner"
+        app:layout_constraintTop_toTopOf="@+id/textViewGegner"
+        app:layout_constraintVertical_bias="0.45"
         app:layout_row="0" />
 
     <ImageView
         android:id="@+id/image_view_wuerfel1"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginEnd="210dp"
-        android:layout_marginRight="210dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:rotation="90"
         android:src="@drawable/wuerfel1"
         app:layout_column="1"
-        app:layout_constraintBottom_toTopOf="@+id/image_view_wuerfel2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/rollDice"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_wuerfel2"
+        app:layout_constraintEnd_toStartOf="@+id/image_view_wuerfel2"
+        app:layout_constraintStart_toEndOf="@+id/btnAufgeben"
+        app:layout_constraintTop_toTopOf="@+id/image_view_wuerfel2"
         app:layout_gravity="bottom"
         app:layout_row="0" />
 
     <Button
         android:id="@+id/rollDice"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
         android:orientation="vertical"
         android:rotation="90"
-        android:text="Roll Dices!"
-        android:textSize="15sp"
+        android:text="Pl. 1"
+        android:textSize="16sp"
         app:layout_column="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -514,19 +569,35 @@
         app:layout_row="0" />
 
     <Button
+        android:id="@+id/rollDice2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="vertical"
+        android:rotation="270"
+        android:text="Pl. 2"
+        android:textSize="16sp"
+        app:layout_column="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rollDice"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_row="0" />
+
+    <Button
         android:id="@+id/btnAufgeben"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="54dp"
+        android:layout_height="50dp"
         android:orientation="vertical"
         android:rotation="90"
-        android:text="Aufgeben!"
-        app:layout_constraintBottom_toBottomOf="@+id/rollDice"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/image_view_wuerfel1"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout"
-        app:layout_constraintVertical_bias="1.0" />
+        android:text="Aufgeben"
+        android:textSize="9sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewSie"
+        app:layout_constraintStart_toEndOf="@+id/textViewSie"
+        app:layout_constraintTop_toTopOf="@+id/textViewSie"
+        app:layout_constraintVertical_bias="0.607" />
 
     <TextView
         android:id="@+id/textViewGegner"
@@ -537,42 +608,27 @@
         android:text="Gegner: 0"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/btnAufgeben"
+        app:layout_constraintEnd_toStartOf="@+id/rollDice2"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/btnAufgeben"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/textViewSie"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textViewSie"
-        android:layout_width="70dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
         android:rotation="90"
         android:text="Sie: 0"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewGegner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textViewGegner"
-        app:layout_constraintTop_toTopOf="@+id/textViewGegner"
-        app:layout_constraintVertical_bias="0.0" />
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/rollDice"
+        app:layout_constraintTop_toTopOf="@+id/rollDice" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="569dp" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
 
 
 

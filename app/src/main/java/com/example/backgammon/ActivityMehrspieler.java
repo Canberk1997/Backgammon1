@@ -122,7 +122,7 @@ public class ActivityMehrspieler extends AppCompatActivity {
         ll37 = (LinearLayout) findViewById(R.id.ll37);
 
 
-        txt = (TextView) findViewById(R.id.textView);
+
 
 
         w1 = (ImageView) findViewById(R.id.weisserstein1);
@@ -157,7 +157,6 @@ public class ActivityMehrspieler extends AppCompatActivity {
         s13 = (ImageView) findViewById(R.id.schwarzerstein13);
         s14 = (ImageView) findViewById(R.id.schwarzerstein14);
         s15 = (ImageView) findViewById(R.id.schwarzerstein15);
-        txt = findViewById(R.id.textView);
 
         rollDice = (Button) findViewById(R.id.rollDice);
         rollDice2 = (Button) findViewById(R.id.rollDice2);

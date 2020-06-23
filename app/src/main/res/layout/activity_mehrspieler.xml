@@ -592,7 +592,7 @@
       android:layout_height="50dp"
       android:orientation="vertical"
       android:rotation="90"
-      android:text="Auf-geben"
+      android:text="Aufgeben"
       android:textSize="9sp"
       app:layout_constraintBottom_toBottomOf="@+id/textViewSie"
       app:layout_constraintStart_toEndOf="@+id/textViewSie"

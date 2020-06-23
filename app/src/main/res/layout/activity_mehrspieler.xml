@@ -13,7 +13,7 @@
   <GridLayout
       android:id="@+id/gridLayout"
       android:layout_width="320dp"
-      android:layout_height="480dp"
+      android:layout_height="490dp"
       android:layout_marginBottom="50dp"
       android:background="@drawable/shape"
       android:columnCount="2"
@@ -260,18 +260,18 @@
         android:rotation="180"></LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll10"
+        android:id="@+id/ll36"
         android:layout_width="160dp"
-        android:layout_height="45dp"
+        android:layout_height="35dp"
         android:background="@android:color/black"
         android:orientation="horizontal">
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll35"
+        android:id="@+id/ll37"
         android:layout_width="160dp"
-        android:layout_height="45dp"
+        android:layout_height="35dp"
         android:background="@android:color/black"
         android:orientation="horizontal">
 
@@ -503,6 +503,25 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/ll10"
+        android:layout_width="160dp"
+        android:layout_height="35dp"
+        android:background="#000000"
+        android:orientation="horizontal"
+        android:rotation="180">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll35"
+        android:layout_width="160dp"
+        android:layout_height="35dp"
+        android:background="#000000"
+        android:orientation="horizontal"
+        android:rotation="180">
+
+    </LinearLayout>
   </GridLayout>
 
 

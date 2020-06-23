@@ -299,7 +299,7 @@
 
 
         <LinearLayout
-            android:id="@+id/ll10"
+            android:id="@+id/ll36"
             android:layout_width="160dp"
             android:layout_height="35dp"
             android:background="@drawable/weissesdreieck"

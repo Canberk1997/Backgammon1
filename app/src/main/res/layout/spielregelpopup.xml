@@ -35,8 +35,9 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:text="Test"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="Spielregeln"
                 android:textColor="#FFFFFF">
 
             </TextView>
@@ -44,45 +45,51 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@color/colorPrimaryDark"
-                android:textColor="#FFFFFF"
-                android:text="Test1">
+                android:text="- Ein Stein kann nur auf einen offenen Punkt gesetzt werden, der nicht von zwei oder mehr gegnerischen Steinen besetzt ist."
+                android:textColor="#FFFFFF">
 
             </TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@color/colorAccent"
                 android:textColor="#FFFFFF"
-                android:text="Test2">
+                android:text= "- Das Ziel des Spiels ist es alle seine eigenen Steine in sein Heimfeld zu bringen. Sobald dies gelungen ist,
+darf der Spieler seine Steine aufsammeln. Dem ersten Spieler, dem das gelingt hat Gewonnen.">
 
             </TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="#23DF33"
                 android:textColor="#FFFFFF"
-                android:text="Test3">
+                android:text="- Ein Stein der alleine steht kann vom gegnerischen Spieler geschlagen werden.
+                Das heißt dieser Platz wird von ihm eingenommen und der eigene Stein kommt raus.">
 
             </TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="#BD5436"
                 android:textColor="#FFFFFF"
-                android:text="Test4">
+                android:text="- Ist ein Stein geschlagen worden, so muss der Spieler diesen erst wieder rein holen,
+                in das gegnerische Feld. Davor darf er die anderen Steine nicht bewegen. ">
 
             </TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="#CF12E8"
                 android:textColor="#FFFFFF"
-                android:text="Test5">
+                android:text="- Die Zahl auf den Würfeln bilden seperate Bewegungen.">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:textColor="#FFFFFF"
+                android:text="- Bei einem Pasch darf der Spieler die angezeigte Augenzahl viermal laufen.">
 
             </TextView>
 

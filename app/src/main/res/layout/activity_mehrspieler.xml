@@ -570,10 +570,11 @@
   <Button
       android:id="@+id/btnAufgeben"
       android:layout_width="54dp"
-      android:layout_height="22dp"
+      android:layout_height="50dp"
       android:orientation="vertical"
       android:rotation="90"
-      android:text="Aufgeben!"
+      android:text="Auf-geben"
+      android:textSize="9sp"
       app:layout_constraintBottom_toBottomOf="@+id/textViewSie"
       app:layout_constraintStart_toEndOf="@+id/textViewSie"
       app:layout_constraintTop_toTopOf="@+id/textViewSie"
@@ -605,15 +606,7 @@
       app:layout_constraintStart_toEndOf="@+id/rollDice"
       app:layout_constraintTop_toTopOf="@+id/rollDice" />
 
-  <TextView
-      android:id="@+id/textView"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="TextView"
-      android:textColor="#FFFFFF"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      tools:layout_editor_absoluteY="547dp" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

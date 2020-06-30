@@ -620,7 +620,7 @@
       android:layout_height="50dp"
       android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
       android:rotation="90"
-      android:text="Sie: 0"
+
       android:textSize="14sp"
       app:layout_constraintStart_toEndOf="@+id/rollDice"
       app:layout_constraintTop_toTopOf="@+id/rollDice" />

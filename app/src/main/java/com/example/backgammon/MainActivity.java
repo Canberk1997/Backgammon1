@@ -3,18 +3,13 @@ package com.example.backgammon;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
-
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-//import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -28,7 +23,6 @@ private Button btnEinstellungen;
 private Button btnEinzelSpieler;
 private Button btnMehrSpieler;
 public String name;
-public EditText nameAmk;
 
 
     @Override
@@ -40,11 +34,9 @@ public EditText nameAmk;
 
         Intent i = getIntent();
         String texteingabe = getIntent().getStringExtra(login_activity.EXTRA_TEXT);
-
+        name = texteingabe;
         TextView textausgabe = (TextView) findViewById(R.id.textausgabe);
-
         textausgabe.setText("Hallo "+ texteingabe + ", Willkommen auf unserer App");
-
         btnEinstellungen = (Button) findViewById(R.id.btnEinstellungen);
         btnEinstellungen.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +44,7 @@ public EditText nameAmk;
                 openActivityEinstellungen();
             }
         });
+
 
        btnEinzelSpieler = (Button) findViewById(R.id.btnEinzelspieler);
        btnEinzelSpieler.setOnClickListener(new View.OnClickListener() {
@@ -77,21 +70,15 @@ public EditText nameAmk;
 
         public void openActivityEinzelspieler(){
             Intent intent = new Intent(this,ActivityEinzelspieler.class);
-
-
             startActivity(intent);
             writeFB(name);
-            // writeFB();
-
-
-
         }
 
         public void opeenActivityMehrSpieler(){
             Intent intent = new Intent(this, ActivityMehrspieler.class);
             startActivity(intent);
+            writeFB(name);
         }
-
 
         public void writeFB(String name){
         FirebaseDatabase db = FirebaseDatabase.getInstance();
@@ -124,75 +111,5 @@ public EditText nameAmk;
                     db.getReference(name+"/whiteStone/"+i).setValue(0);
                 }
             }
-
-
-
-        }
-
-
-
-        public void writeFB(){
-
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-          //  DatabaseReference myRef = database.getReference("Spielbrett/whiteStone/00");
-
-
-            database.getReference("Spielfeld/whiteStone/00").setValue(2);
-            database.getReference("Spielfeld/whiteStone/11").setValue(5);
-            database.getReference("Spielfeld/whiteStone/16").setValue(3);
-            database.getReference("Spielfeld/whiteStone/18").setValue(5);
-            database.getReference("Spielfeld/whiteStone/01").setValue(0);
-            database.getReference("Spielfeld/whiteStone/02").setValue(0);
-            database.getReference("Spielfeld/whiteStone/03").setValue(0);
-            database.getReference("Spielfeld/whiteStone/04").setValue(0);
-            database.getReference("Spielfeld/whiteStone/05").setValue(0);
-            database.getReference("Spielfeld/whiteStone/06").setValue(0);
-            database.getReference("Spielfeld/whiteStone/07").setValue(0);
-            database.getReference("Spielfeld/whiteStone/08").setValue(0);
-            database.getReference("Spielfeld/whiteStone/09").setValue(0);
-            database.getReference("Spielfeld/whiteStone/10").setValue(0);
-            database.getReference("Spielfeld/whiteStone/12").setValue(0);
-            database.getReference("Spielfeld/whiteStone/13").setValue(0);
-            database.getReference("Spielfeld/whiteStone/14").setValue(0);
-            database.getReference("Spielfeld/whiteStone/15").setValue(0);
-            database.getReference("Spielfeld/whiteStone/17").setValue(0);
-            database.getReference("Spielfeld/whiteStone/19").setValue(0);
-            database.getReference("Spielfeld/whiteStone/20").setValue(0);
-            database.getReference("Spielfeld/whiteStone/21").setValue(0);
-            database.getReference("Spielfeld/whiteStone/22").setValue(0);
-            database.getReference("Spielfeld/whiteStone/23").setValue(0);
-
-
-//alternativ in for schleife
-
-
-
-
-        }
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }

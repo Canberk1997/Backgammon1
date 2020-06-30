@@ -2,6 +2,7 @@ package com.example.backgammon;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -22,7 +23,7 @@ public class PopUp extends AppCompatDialogFragment {
                 .setCancelable(false)
                 .setPositiveButton("Aufgeben", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int i) {
-
+                        reset();
                     }
                 })
                 .setNegativeButton("Nicht Aufgeben", new DialogInterface.OnClickListener() {
@@ -33,4 +34,9 @@ public class PopUp extends AppCompatDialogFragment {
         return builder.create();
 
     }
+    public void reset(){
+        MainActivity s = new MainActivity();
+        s.opeenActivityMehrSpieler();
+    }
+
 }
